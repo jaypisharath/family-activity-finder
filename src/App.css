@@ -1,38 +1,81 @@
+/* App.css - Main application styles with design system */
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%);
 }
 
-.App-link {
-  color: #61dafb;
+.app-header {
+  background: white;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  padding: 2rem 0;
+  margin-bottom: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.header-content h1 {
+  color: #111827;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.header-content p {
+  color: #6B7280;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.app-main {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.app-footer {
+  background: white;
+  border-top: 1px solid #E5E7EB;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.app-footer p {
+  color: #6B7280;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .header-content h1 {
+    font-size: 2rem;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .header-content p {
+    font-size: 1rem;
+  }
+  
+  .app-header {
+    padding: 1.5rem 0;
+    margin-bottom: 1rem;
+  }
+  
+  .app-main {
+    padding: 0 0.5rem;
   }
 }

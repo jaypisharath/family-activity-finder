@@ -1,46 +1,85 @@
-# Getting Started with Create React App
+# Family Activity Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React application that helps parents find family-friendly activities based on their location, kids' ages, availability, and preferences.
 
-## Available Scripts
+## Milestone 1 - UI Foundation ✅
 
-In the project directory, you can run:
+This milestone focuses on building a complete user interface with dummy data, demonstrating the full user experience before integrating with the Claude API.
 
-### `npm start`
+### Features Implemented
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Responsive Form**: City input, kids' ages, time availability, driving distance slider, and optional preferences
+- **Activity Cards**: 5 sample recommendations with bold titles, emojis, and detailed descriptions
+- **Loading States**: Simulated API delay with loading spinner
+- **Mobile-First Design**: Responsive layout that works on all screen sizes
+- **TypeScript**: Full type safety throughout the application
+- **Design System**: Consistent colors, typography, and spacing
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Tech Stack
 
-### `npm test`
+- **React 18** with TypeScript
+- **CSS Modules** for component styling
+- **Inter Font** from Google Fonts
+- **Create React App** for development tooling
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Getting Started
 
-### `npm run build`
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Start the development server:
+   ```bash
+   npm start
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Project Structure
 
-### `npm run eject`
+```
+src/
+├── components/
+│   ├── ActivityForm.tsx      # Form component with validation
+│   ├── ActivityForm.css      # Form styling
+│   ├── ActivityResults.tsx   # Results display component
+│   └── ActivityResults.css   # Results styling
+├── data/
+│   └── dummyData.ts          # Sample activity data
+├── types/
+│   └── index.ts              # TypeScript type definitions
+├── App.tsx                   # Main application component
+├── App.css                   # Global application styles
+└── index.tsx                 # Application entry point
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Design System
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Primary Color**: #4F46E5 (Indigo)
+- **Secondary Color**: #10B981 (Emerald)
+- **Accent Color**: #F59E0B (Amber)
+- **Background**: #F9FAFB (Gray-50)
+- **Typography**: Inter font family
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Next Steps (Milestone 2)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Integrate Claude API with web search
+- Replace dummy data with real activity recommendations
+- Add error handling for API failures
+- Implement environment configuration
 
-## Learn More
+### Testing the Application
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Fill out the form with sample data:
+   - City: "San Francisco"
+   - Kids' Ages: "5, 8"
+   - Availability: "Saturday afternoon"
+   - Distance: 15 miles
+   - Preferences: "outdoor activities"
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Click "Find Activities" to see the loading state and results
+
+3. Test responsive design by resizing the browser window
+
+The application demonstrates the complete user flow with realistic dummy data, providing a solid foundation for the Claude API integration in Milestone 2.
