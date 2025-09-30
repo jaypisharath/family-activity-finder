@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ActivityForm from './components/ActivityForm';
 import ActivityResults from './components/ActivityResults';
 import { ActivityFormData, ActivityRecommendation } from './types';
-import { simulateApiCall } from './data/dummyData';
+import { getActivityRecommendations } from './services/api';
 import './App.css';
 
 function App() {
@@ -15,11 +15,12 @@ function App() {
     setHasSearched(true);
     
     try {
-      // Simulate API call with dummy data
-      const results = await simulateApiCall(1500);
+      // Call real API endpoint
+      const results = await getActivityRecommendations(formData);
       setRecommendations(results);
     } catch (error) {
       console.error('Error fetching recommendations:', error);
+      // Set empty array on error - the API service handles fallback responses
       setRecommendations([]);
     } finally {
       setIsLoading(false);
@@ -47,7 +48,7 @@ function App() {
       </main>
       
       <footer className="app-footer">
-        <p>Built with React & TypeScript • Milestone 1 Demo</p>
+        <p>Built with React & TypeScript • Powered by Claude AI</p>
       </footer>
     </div>
   );

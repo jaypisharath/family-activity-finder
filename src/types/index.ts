@@ -2,10 +2,10 @@
 
 export interface ActivityFormData {
   city: string;
-  kidsAges: number[];
-  availability: string;
-  maxDistance: number;
-  preferences?: string;
+  kidsAges: string; // Comma-separated ages, e.g., "5,8,12"
+  timeText: string; // e.g., "Saturday afternoon"
+  maxMiles: number; // From slider
+  preferences?: string; // Optional text input
 }
 
 export interface ActivityRecommendation {
@@ -26,8 +26,8 @@ export interface ActivitySearchResponse {
 export interface FormErrors {
   city?: string;
   kidsAges?: string;
-  availability?: string;
-  maxDistance?: string;
+  timeText?: string;
+  maxMiles?: string;
   preferences?: string;
 }
 
